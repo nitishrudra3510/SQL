@@ -1,0 +1,122 @@
+SQL Learning plan 
+
+|-- Week 1: Introduction to SQL
+|   |-- SQL Basics
+|   |   |-- What is SQL?
+|   |   |-- History and Evolution of SQL
+|   |   |-- Relational Databases
+|   |-- Setting up for SQL
+|   |   |-- Installing MySQL/PostgreSQL
+|   |   |-- Setting up a Database
+|   |   |-- Basic SQL Syntax
+|   |-- First SQL Queries
+|   |   |-- SELECT Statements
+|   |   |-- WHERE Clauses
+|   |   |-- Basic Filtering
+|
+|-- Week 2: Intermediate SQL
+|   |-- Advanced SELECT Queries
+|   |   |-- ORDER BY
+|   |   |-- LIMIT
+|   |   |-- Aliases
+|   |-- Joining Tables
+|   |   |-- INNER JOIN
+|   |   |-- LEFT JOIN
+|   |   |-- RIGHT JOIN
+|   |   |-- FULL OUTER JOIN
+|   |-- Aggregations
+|   |   |-- COUNT, SUM, AVG, MIN, MAX
+|   |   |-- GROUP BY
+|   |   |-- HAVING Clauses
+|
+|-- Week 3: Advanced SQL Techniques
+|   |-- Subqueries
+|   |   |-- Basic Subqueries
+|   |   |-- Correlated Subqueries
+|   |-- Window Functions
+|   |   |-- ROW_NUMBER, RANK, DENSE_RANK
+|   |   |-- NTILE, LEAD, LAG
+|   |-- Advanced Joins
+|   |   |-- Self Joins
+|   |   |-- Cross Joins
+|   |-- Data Types and Functions
+|   |   |-- Date Functions
+|   |   |-- String Functions
+|   |   |-- Numeric Functions
+|
+|-- Week 4: Database Design and Normalization
+|   |-- Database Design Principles
+|   |   |-- ER Diagrams
+|   |   |-- Relationships and Cardinality
+|   |-- Normalization
+|   |   |-- First Normal Form (1NF)
+|   |   |-- Second Normal Form (2NF)
+|   |   |-- Third Normal Form (3NF)
+|   |-- Indexes and Performance Tuning
+|   |   |-- Creating Indexes
+|   |   |-- Understanding Execution Plans
+|   |   |-- Optimizing Queries
+|
+|-- Week 5: Stored Procedures and Functions
+|   |-- Stored Procedures
+|   |   |-- Creating Stored Procedures
+|   |   |-- Parameters in Stored Procedures
+|   |   |-- Error Handling
+|   |-- Functions
+|   |   |-- Scalar Functions
+|   |   |-- Table-Valued Functions
+|   |   |-- System Functions
+|
+|-- Week 6: Transactions and Concurrency
+|   |-- Transactions
+|   |   |-- ACID Properties
+|   |   |-- COMMIT and ROLLBACK
+|   |   |-- Savepoints
+|   |-- Concurrency Control
+|   |   |-- Locking Mechanisms
+|   |   |-- Isolation Levels
+|   |   |-- Deadlocks and How to Avoid Them
+|
+|-- Week 7-8: Advanced SQL Topics
+|   |-- Triggers
+|   |   |-- Creating and Using Triggers
+|   |   |-- AFTER and BEFORE Triggers
+|   |   |-- INSTEAD OF Triggers
+|   |-- Views
+|   |   |-- Creating Views
+|   |   |-- Updating Views
+|   |   |-- Indexed Views
+|   |-- Security
+|   |   |-- User Management
+|   |   |-- Roles and Permissions
+|   |   |-- SQL Injection Prevention
+|
+|-- Week 9-11: Real-world Applications and Projects
+|   |-- Capstone Project
+|   |   |-- Designing a Database Schema
+|   |   |-- Implementing the Schema
+|   |   |-- Writing Complex Queries
+|   |   |-- Optimizing and Tuning
+|   |-- ETL Processes
+|   |   |-- Data Extraction
+|   |   |-- Data Transformation
+|   |   |-- Data Loading
+|   |-- Data Analysis and Reporting
+|   |   |-- Creating Reports
+|   |   |-- Data Visualization with SQL
+|   |   |-- Integration with BI Tools
+|
+|-- Week 12: Post-Project Learning
+|   |-- Database Administration
+|   |   |-- Backup and Restore
+|   |   |-- Maintenance Plans
+|   |   |-- Performance Monitoring
+|   |-- SQL in the Cloud
+|   |   |-- AWS RDS
+|   |   |-- Google Cloud SQL
+|   |   |-- Azure SQL Database
+|   |-- Continuing Education
+|   |   |-- Advanced SQL Topics
+|   |   |-- Research Papers
+|   |   |-- New Developments in SQL
+|
