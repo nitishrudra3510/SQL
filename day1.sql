@@ -26,7 +26,7 @@ CREATE TABLE users(
     name VARCHAR(255),
     email varchar(255),
     password varchar(255)
-)
+);
 
 
 
@@ -34,20 +34,20 @@ CREATE TABLE users(
 -- TRUNCATE TABLE users;
 
 -- drop the table 
--- drop table if exists users;
+drop table if exists users;
 
 
--- create table  : use not null
--- USE campusx;
--- CREATE TABLE users(
--- 	user_id INTEGER NOT NULL,
---     name VARCHAR(255) NOT NULL,
---     email varchar(255),
---     password varchar(255)
--- )
+create table  : use not null
+USE campusx;
+CREATE TABLE users(
+	user_id INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    email varchar(255),
+    password varchar(255)
+);
 
 -- use not null & unique
-/*
+
 CREATE TABLE users(
 	user_id INTEGER NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -56,8 +56,8 @@ CREATE TABLE users(
     
     -- this is the secondd way to create constraints..
     -- constraint users_email_unique UNIQUE (email, name, password)
-)
-*/
+);
+
 
 
 
