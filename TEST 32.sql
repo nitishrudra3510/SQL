@@ -51,7 +51,7 @@ SELECT DISTINCT smoker, diabetic FROM campusx.insurance;
 
 SELECT AVG(claim) AS avg_claim_amt 
 FROM campusx.insurance
-WHERE gender = 'female' 
+WHERE gender = 'female'  
 AND smoker = 'No' 
 AND diabetic = 'Yes';
 

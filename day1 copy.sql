@@ -1,0 +1,16 @@
+-- -- CREATE DATABASE
+-- CREATE DATABASE campusx 
+
+-- -- IF DATABASE HAS NOT EXISTS THEN CREATES..
+-- CREATE DATABASE IF NOT EXISTS campusx
+
+-- DROP DATABASE IF EXISTS campusx
+
+
+
+CREATE TABLE user(
+    user_id INTEGER,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
+);
