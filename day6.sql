@@ -160,7 +160,7 @@ LEAD(marks)  over(PARTITION BY branch ORDER BY student_id)
 from marks;
 
 
--- find the month on month revenue growth of zomato...alter
+-- find the month on month revenue growth of zomato alter
 
 USE zomato;
 
@@ -178,3 +178,69 @@ SELECT
     ((total_revenue - LAG(total_revenue) OVER (ORDER BY month_number))/total_revenue)*100 AS mom_growth
 FROM MonthlyRevenue
 ORDER BY month_number;
+
+
+-- RANKING : find the top bestmans and most runs in the ipl
+
+SELECT * FROM campusx.ipl;
+use campusx;
+
+SELECT * FROM (SELECT BattingTeam, batter, sum(batsman_run) AS 'total_runs',
+DENSE_RANK() OVER(PARTITION BY BattingTeam ORDER BY SUM(batsman_run) DESC) AS 'rank_within_team'
+FROM ipl
+GROUP BY BattingTeam, batter) t
+
+WHERE t.rank_within_team < 6
+
+ORDER BY t.BattingTeam, t.rank_within_team;
+
+
+-- ## CUMMUlative SUM : ye sum karke deta hai jaise ki virat kohli ne 100 odi match tak kitne runs mara to 100th odi match se pahele sabhi match ke run add karke dega..
+
+SELECT CONCAT('Match - ',CAST(ROW_NUMBER() OVER(ORDER BY ID) AS CHAR)) As 'Match_no',
+SUM(batsman_run) AS 'Runs_scored',
+SUM(sum(batsman_run)) OVER(ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS 'career_runs'
+FROM ipl
+WHERE batter = 'V kohli'
+GROUP BY ID;
+
+-- find the 50th match, 100th, 200th match tk kitna run mara run nikalo cummulative sum se
+
+SELECT * FROM (SELECT CONCAT('Match-',CAST(ROW_NUMBER() OVER(ORDER BY ID) AS CHAR)) As 'Match_no',
+SUM(batsman_run) AS 'Runs_scored',
+SUM(sum(batsman_run)) OVER(ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS 'career_runs'
+FROM ipl
+WHERE batter = 'V kohli'
+GROUP BY ID) t
+
+WHERE Match_no = 'Match-50' OR Match_no = 'Match-100' OR Match_no = 'Match-200';
+
+
+-- find the avg runs of virat kohli
+
+SELECT * FROM (SELECT CONCAT('Match-',CAST(ROW_NUMBER() OVER(ORDER BY ID) AS CHAR)) As 'Match_no',
+SUM(batsman_run) AS 'Runs_scored',
+SUM(sum(batsman_run)) OVER w AS 'career_runs',
+AVG(sum(batsman_run)) OVER w AS 'career_avg' 
+FROM ipl
+WHERE batter = 'V kohli'
+GROUP BY ID
+WINDOW w AS (ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)) t;
+
+-- # RUNNING AVG : apne aas pass ke value(5 rows) pr running value nikal ke check kar sakte hai ya 10 rows depend on person
+
+SELECT * FROM (SELECT CONCAT('Match-',CAST(ROW_NUMBER() OVER(ORDER BY ID) AS CHAR)) As 'Match_no',
+SUM(batsman_run) AS 'Runs_scored',
+SUM(sum(batsman_run)) OVER w AS 'career_runs',
+AVG(sum(batsman_run)) OVER w AS 'career_avg',
+AVG(SUM(batsman_run)) OVER(ROWS between 9 preceding and current row) AS 'rolling_avg'
+FROM ipl
+WHERE batter = 'V kohli'
+GROUP BY ID
+WINDOW w AS (ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)) t;
+
+
+
+
+
+
