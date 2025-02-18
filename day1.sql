@@ -15,7 +15,6 @@ CREATE DATABASE IF NOT EXISTS campusx;
 -- BETTER WAY TO DROP THE DATABSE..
 DROP DATABASE IF EXISTS campusx;
 
-
 --
 CREATE DATABASE IF NOT EXISTS campusx;
 
@@ -37,7 +36,7 @@ CREATE TABLE users(
 drop table if exists users;
 
 
-create table  : use not null
+-- create table  : use not null
 USE campusx;
 CREATE TABLE users(
 	user_id INTEGER NOT NULL,
@@ -92,7 +91,7 @@ CREATE TABLE student1(
     name varchar(50) not null,
     age INTEGER CHECK (age > 6 AND age < 25),
     
-    CONSTRAINT students_age_check CHECK (age > 6 AND AGE < 25)
+    CONSTRAINT students_age_check CHECK (age > 6 AND age < 25)
 );
 
 
