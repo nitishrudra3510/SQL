@@ -5,7 +5,7 @@ SELECT model, screen_size FROM campusx.smartphones where brand_name = "samsung"
 ORDER BY screen_size DESC LIMIT 5;
 
 -- SORT OF ALL THE PHONES in descending order number of total cameras..
-SELECT model,  + num_rear_cameras AS 'Total_cameraS' 
+SELECT model,  num_rear_cameras AS 'Total_cameraS' 
 FROM campusx.smartphones
 ORDER BY Total_cameraS desc;
 
@@ -20,6 +20,9 @@ SELECT model, battery_capacity FROM campusx.smartphones
 ORDER BY battery_capacity DESC limit 1,1; -- 
 
 SELECT model, battery_capacity FROM campusx.smartphones 
+ORDER BY battery_capacity DESC limit 1;
+
+SELECT model, battery_capacity FROM campusx.smartphones 
 ORDER BY battery_capacity DESC limit 3,2; -- it represnets the x,y x means here(0-2 print nahi karega uske badh) 2(3,4) print karega only
 
 SELECT model, battery_capacity FROM campusx.smartphones 
@@ -27,6 +30,10 @@ ORDER BY battery_capacity DESC limit 5,5;
 
 
 -- find the name and rating with of the worst rated apple phone..
+
+SELECT model, rating from campusx.smartphones where brand_name = 'apple'
+order by rating asc limit 1;
+
 SELECT model, rating
 FROM campusx.smartphones
 where brand_name = 'apple'
@@ -41,6 +48,8 @@ SELECT * FROM campusx.smartphones
 ORDER BY brand_name ASC, price ASC;
 
 
+select * from campusx.smartphones order by brand_name ASC, price ASC;
+;
 -- # GROUPING DATA
 
 -- 1. Group smartphones by brand and get the count, average price, max rating, avg screen size and avg battery capacity
@@ -87,16 +96,30 @@ FROM campusx.smartphones
 GROUP BY brand_name, processor_brand; 
 
 -- 5. find top 5 most costly phone brands
+
+select brand_name, avg(price) AS 'avg_price'
+from campusx.smartphones
+GROUP BY brand_name
+ORDER BY avg_price DESC LIMIT 5
+;
+
 SELECT brand_name, AVG(price) AS 'Avg_Price'
 FROM campusx.smartphones
 Group BY brand_name
 ORDER BY Avg_Price DESC LIMIT 5;
 
+
 -- 6. which brand makes the smallest screen smartphones
 SELECT brand_name, AVG(screen_size) AS 'Avg_Sreec_Size'
 FROM campusx.smartphones
 Group BY brand_name
-ORDER BY Avg_Sreec_Size DESC LIMIT 1;
+ORDER BY Avg_Sreec_Size asc LIMIT 1;
+
+SELECT brand_name, AVG(screen_size) AS 'Avg_Sreec_Size'
+FROM campusx.smartphones
+Group BY brand_name
+ORDER BY Avg_Sreec_Size asc LIMIT 1;
+;
 
 -- 7. Avg price of 5g phones vs avg price of non 5g phones
 SELECT has_5g, AVG(price)

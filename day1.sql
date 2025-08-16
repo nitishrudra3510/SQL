@@ -132,17 +132,20 @@ drop table orders;
 -- alter table commands 
 
 ALTER TABLE customers ADD COLUMN password varchar(255) NOT NULL;
+ALTER TABLE customers ADD COLUMN password varchar(255) NOT NULL;
 
 -- IF WE WANT TO ADD THE COLUMN BETWEEN NAME AND EMAIL
 
 ALTER TABLE customers ADD COLUMN surname varchar (255) not null AFTER name;
-
+ALTER TABLE customers ADD COLUMN surname varchar(255) not null AFTER name;
 -- add the columns in the last.. of datetime..alter
 
 ALTER TABLE customers
 ADD COLUMN pan_number VARCHAR(255) AFTER surname,
 ADD COLUMN joining_date DATETIME NOT NULL DEFAULT current_timestamp;
 
+ALTER TABLE customers ADD COLUMN pan_number VARCHAR(255) AFTER surname, 
+ADD COLUMN joining_date DATETIME NOT NULL DEFAULT current_timestamp; 
 
 -- DELETE THE COLUMNS 
 
@@ -152,8 +155,7 @@ ALTER TABLE customers DROP COLUMN pan_number;
 
 ALTER TABLE customers
 DROP COLUMN surname,
-DROP COLUMN joining_date
-;
+DROP COLUMN joining_date;
 
 -- modified the columns
 ALTER TABLE customers MODIFY COLUMN password varchar(255) Not null;
@@ -167,4 +169,4 @@ ALTER TABLE customers ADD constraint CUSTOMER_AGE_CHECK CHECK (age > 20);
 
 -- ALTER TABLE customers MODIFY constraint CUSTOMER_AGE_CHECK CHECK (age > 6);
 
-ALTER TABLE customers DROP constraint CUSTOMER_AGE_CHECK CHECK (age > 6)
+ALTER TABLE customers DROP constraint CUSTOMER_AGE_CHECK CHECK (age > 6);
